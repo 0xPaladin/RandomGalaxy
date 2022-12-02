@@ -1,0 +1,257 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif;
+  font-size: 13px;
+  font-weight: 200;
+  
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+  margin: 0;
+  padding: 0;
+  
+  background-color: #213;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+p {
+  margin: 4px 0;
+}
+h1,h2,h3,h4 {
+  font-weight: 200;
+  margin: 8px 0 4px;
+}
+h1:nth-child(1), h2:nth-child(1), h3:nth-child(1), h4:nth-child(1) {
+  margin-top: 0;
+}
+a:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+a:active {
+  background-color: black;
+}
+input, button {
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+}
+button:disabled {
+  opacity: 0.5;
+}
+input, button {
+  font-size: 13px;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+button:hover {
+  border: 1px solid rgba(255,255,255,0.5);
+}
+button:active {
+  border: 1px solid rgba(255,255,255,1);
+}
+button {
+  border-radius: 3px; 
+}
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+form {
+  position: absolute;
+  color: white;
+  padding: 4px 8px;
+  background-color: rgba(0,0,0,0.5);
+}
+#settings {
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+.star {
+  cursor: default;
+}
+
+.filtered {
+  display:none;
+}
+
+.star:hover {
+  stroke: white;
+  stroke-opacity: 0.5;
+  stroke-width: 2;
+}
+
+.star.current {
+  stroke: white;
+  stroke-opacity: 1;
+  stroke-width: 2;
+}
+
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background-color: rgba(0,0,0,0.75);
+  padding: 2px;
+  display: flex;
+  color: white;
+}
+
+.toolbar .icon {
+  max-height: 24px;
+  max-width: 24px;
+}
+
+.toolbar > label .icon {
+  margin: -6px 0;
+}
+
+.toolbar > * {
+  vertical-align: center;
+  margin: 0 2px;
+  height: 36px;
+  padding: 0 12px;
+}
+
+.toolbar > label {
+  padding: 8px 12px;
+}
+
+.toolbar input[type="range"] {
+  width: 80px;
+}
+
+.toolbar > .flexible-space {
+  flex-grow: 1;
+}
+
+.list {
+  position: fixed; 
+  top: 40px;
+  bottom: 0;
+  background: rgba(0,0,0,0.5); 
+  color: white;
+  overflow-y: scroll; 
+  overflow-x: hidden;
+}
+
+.list > * {
+  cursor: default;
+  padding: 2px 8px;
+  font-weight: 300;
+}
+
+.list > :hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.list > .current {
+  background-color: rgba(255,255,255,0.75);
+  color: black;
+}
+
+.data {
+  margin-left: -256px;
+  background-color: rgba(0,0,0,0.5);
+  flex-grow: 1;
+}
+
+.planet {
+  display: flex;
+  padding: 0 0 0 8px;
+}
+
+.planet .data {
+  margin: 0;
+  padding: 2px 0;
+}
+
+.planet svg {
+  margin-left: -256px;
+}
+
+[classification="rocky"] {
+  fill: #8f4;
+}
+
+[classification="gas giant"] {
+  fill: #fb8;
+}
+
+[classification="brown dwarf"] {
+  fill: #f66;
+}
+
+[atmosphere] {
+  stroke-width: 2000;
+  stroke-opacity: 0.5;
+}
+[atmosphere="Toxic"] {
+  stroke: #afa;
+}
+[atmosphere="Inert"] {
+  stroke: #888;
+}
+[atmosphere="Filterable"] {
+  stroke: #8cf;
+}
+[atmosphere="Breathable"] {
+  stroke: #aaf;
+}
+[atmosphere="Trace"] {
+  stroke: #888;
+}
+[atmosphere="Crushing"] {
+  stroke-width: 5000;
+  stroke: #ffa;
+  stroke-opacity: 0.8;
+}
+input {
+  vertical-align: baseline;
+}
+input[type=range] {
+  vertical-align: bottom;
+}
+label, button {
+  overflow: hidden;
+}
+label .hidden,
+button .hidden {
+  position: absolute;
+  top: -1000px;
+}
+
+@media handheld {
+  input, button {
+    font-size: 24px;
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  .hide-if-narrow {
+    display: none;
+  }
+}
+
+@media only screen and (orientation:portrait) { 
+  #wrap {
+    width: 768px;
+    height: 1024px;
+  }
+  #settings {
+    position: fixed;
+    top: 580px;
+  }
+  div, canvas {
+    max-width: 768px;
+  }
+}
